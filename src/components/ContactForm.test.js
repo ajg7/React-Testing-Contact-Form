@@ -10,12 +10,18 @@ test("ContactForm renders", () => {
 
 test("email renders", () => {
     const { getByTestId } = render(<ContactForm />);
-    const emailInput = getByTestId ("email");
-    expect(emailInput.textContent).toBe("");
+    const emailRender = getByTestId ("email");
+    expect(emailRender.textContent).toBe("");
 })
 
 test("first and last name render", () => {
     const { getByPlaceholderText } = render(<ContactForm />);
-    const firstNameInput = screen.getByPlaceholderText(/edd*/i);
-    const lastNameInput = screen.getByPlaceholderText(/burke*/i);
+    const firstNameRender = screen.getByPlaceholderText(/edd*/i);
+    const lastNameRender = screen.getByPlaceholderText(/burke*/i);
 })
+
+test("Message renders", () => {
+    const { getByLabelText } = render(<ContactForm />);
+    const messageRender = screen.getByLabelText(/message/i);
+})
+

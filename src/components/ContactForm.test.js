@@ -13,3 +13,9 @@ test("email renders", () => {
     const emailInput = getByTestId ("email");
     expect(emailInput.textContent).toBe("");
 })
+
+test("first and last name render", () => {
+    const { getByPlaceholderText } = render(<ContactForm />);
+    const firstNameInput = screen.getByPlaceholderText(/edd*/i);
+    const lastNameInput = screen.getByPlaceholderText(/burke*/i);
+})
